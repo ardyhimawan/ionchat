@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Ionic Chat Firebase
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list>
+    <ion-item *ngFor="let item of firelist | async">
+      <ion-avatar item-left>
+        <img src="{{item.img}}" />
+      </ion-avatar>
+      <h2 class="chat-username">
+        {{item.username}}
+      </h2>
+      <p class="chat-text">{{item.chat_text}}</p>
+      <h7 class="chat-time">{{item.timestamp | date:'dd/MM/yyyy'}}</h7>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <form #f="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col width-80>
+          <ion-input [(ngModel)]="chat" name="chatText" required placeholder="message..."></ion-input>
+        </ion-col>
+        <ion-col width-20 center>
+          <button (click)="chatSend(f.value, f.valid)" full [disabled]="f.valid === false">send</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-footer>
