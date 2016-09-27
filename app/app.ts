@@ -15,10 +15,10 @@ import {
   providers: [
     FIREBASE_PROVIDERS,
     defaultFirebase({
-      apiKey: "AIzaSyChLbrO0uR0uSBhH1xK5asa8Zdnb6-JwHA",
-      authDomain: "project-5786651430008908615.firebaseapp.com",
-      databaseURL: "https://project-5786651430008908615.firebaseio.com",
-      storageBucket: "project-5786651430008908615.appspot.com"
+      apiKey: "",
+      authDomain: "",
+      databaseURL: "",
+      storageBucket: ""
     })
   ]
 })
